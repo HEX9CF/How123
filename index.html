@@ -1,0 +1,531 @@
+<!--
+ _|    _|  _|_|_|_|  _|      _|    _|_|      _|_|_|  _|_|_|_|
+ _|    _|  _|          _|  _|    _|    _|  _|        _|
+ _|_|_|_|  _|_|_|        _|        _|_|_|  _|        _|_|_|
+ _|    _|  _|          _|  _|          _|  _|        _|
+ _|    _|  _|_|_|_|  _|      _|  _|_|_|      _|_|_|  _|
+Powered by HEX9CF
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title>how123网址导航 - example.com</title>
+    <script src="./public/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.css"/>
+    <script src="./public/bootstrap/js/bootstrap.js"></script>
+    <meta name="title" content="how123网址导航"/>
+    <meta name="keywords" content="网址导航"/>
+    <meta name="description"
+          content="how123网址导航(example.com)，收录了大量优质常用网站，可以快速地帮助您找到您需要的网站。"/>
+    <style type="text/css">
+        <!--
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        -->
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img alt="icon" src="./favicon.ico">
+                </a>
+                <a class="navbar-brand" href="#">how123网址导航</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)"><span
+                            class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a></li>
+                    <li><a onclick="SetHome(window.location)" href="javascript:void(0)"><span
+                            class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></li>
+                </ul>
+                <form action="https://www.baidu.com/s" method="get" class="navbar-form navbar-right" target="_blank">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="wd" placeholder="搜索..." baiduSug="1">
+                    </div>
+                    <button type="submit" class="btn btn-default">百度搜索</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header">
+        <div style="float:left"><h1>how123网址导航<small>&nbsp;&nbsp;-&nbsp;&nbsp;http://example.com</small></h1></div>
+        <div style="float:right"><br>
+            <iframe src="weather1.html" width="600" height="60" frameborder="0" marginwidth="0" marginheight="0"
+                    scrolling="no"></iframe>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail panel panel-default">
+            <!--<img alt="网址导航" src="" style="height: auto; width: 100%; display: block;">-->
+            <div class="caption">
+                <h3>how123网址导航</h3>
+                <p>how123网址导航(example.com)，收录了大量优质常用网站，可以快速地帮助您找到您需要的网站。</p>
+                <p><a onclick="AddFavorite(window.location,document.title)" class="btn btn-primary"
+                      href="javascript:void(0)"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a>&nbsp;<a
+                        onclick="SetHome(window.location)" class="btn btn-primary" href="javascript:void(0)"><span
+                        class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></p>
+            </div>
+        </div>
+        <iframe src="./weather2.html" width="255" height="320" frameborder="0" marginwidth="0" marginheight="0"
+                scrolling="no"></iframe>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">常用网站</div>
+            <div class="panel-body">
+                <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#baidu" id="home-tab" role="tab" data-toggle="tab"
+                                                              aria-controls="baidu" aria-expanded="true">百度</a></li>
+                    <li role="presentation" class=""><a href="#360" role="tab" id="profile-tab" data-toggle="tab"
+                                                        aria-controls="360" aria-expanded="false">360</a></li>
+                    <li role="presentation" class=""><a href="#sogou" role="tab" id="profile-tab" data-toggle="tab"
+                                                        aria-controls="sogou" aria-expanded="false">搜狗</a></li>
+                    <li role="presentation" class=""><a href="#" id="profile-tab">更多>>></a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="baidu" aria-labelledby="home-tab"><br>
+                        <div class="col-md-0"></div>
+                        <div class="col-md-2"><h4>百度搜索</h4><!--<img width="auto" height="34px" src="img/baidu.png" alt="baidu" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.baidu.com/s" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps"
+                                                          name="wd"
+                                                          size="30" placeholder="百度搜索..." baiduSug="1"></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #3385ff;
+							border-bottom: 1px solid #2d78f4;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="百度搜索">
+                        </form>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="360" aria-labelledby="profile-tab"><br>
+                        <div class="col-md-0"></div>
+                        <div class="col-md-2"><h4>360搜索</h4><!--<img width="auto" height="34px" src="img/360.png" alt="360" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.so.com/s" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps" name="q"
+                                                          size="30" placeholder="360搜索..."></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #19b955;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="360搜索">
+                        </form>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="sogou" aria-labelledby="profile-tab"><br>
+                        <div class="col-md-2"><h4>搜狗搜索</h4><!--<img width="auto" height="34px" src="img/sogou.png" alt="sogou" align="left"
+                                           border="0">--></div>
+                        <form action="https://www.sogou.com/web" method="get" target="_blank">
+                            <div class="col-md-8">
+                                <div class="panel"><input type="text" class="form-control" onfocus="checkHttps"
+                                                          name="query"
+                                                          size="30" placeholder="搜狗搜索..."></div>
+                            </div>
+                            <input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #fd6853;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+                                   value="搜狗搜索">
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <br>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a class="btn btn-default btn-xs" href="https://www.baidu.com/" role="button">百度</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.sina.com.cn/" role="button">新浪</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://weibo.com//" role="button">微博</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.sohu.com/" role="button">搜狐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.qq.com/" role="button">腾讯</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ifeng.com/" role="button">凤凰</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.163.com/" role="button">网易</a></td>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal"
+                                           data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                                    aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+                <div align=right><a class="btn btn-primary btn-xs" href="#" role="button">更多>>></a></div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">网址导航</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td scope="row"><span class="label label-default">新闻</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://news.sina.com.cn/" role="button">新浪新闻</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://news.sohu.com/" role="button">搜狐新闻</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://news.qq.com/" role="button">腾讯新闻</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://news.163.com/" role="button">网易新闻</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.toutiao.com/" role="button">今日头条</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=新闻"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">视频</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.youku.com/" role="button">优酷</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.tudou.com/" role="button">土豆</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://v.qq.com/" role="button">腾讯</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ku6.com/" role="button">酷6网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.iqiyi.com/" role="button">爱奇艺</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=视频"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">购物</span></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.taobao.com/" role="button">淘宝</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.tmall.com/" role="button">天猫</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.jd.com/" role="button">京东</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.dangdang.com/" role="button">当当</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.amazon.cn/" role="button">亚马逊</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=购物"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">游戏</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.4399.com/" role="button">4399小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.7k7k.com/" role="button">7k7k小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.abab.com/" role="button">ABAB小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://xyx.2144.cn/" role="button">2144小游戏</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.3366.com/" role="button">3366小游戏</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=小游戏"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">社交</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://weibo.com/" role="button">新浪微博</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://qzone.qq.com/" role="button">QQ空间</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.kaixin001.com/" role="button">开心网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.renren.com/" role="button">人人网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.jiayuan.com/" role="button">世纪佳缘</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=社交"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">论坛</span></td>
+                    <td><a class="btn btn-default btn-xs" href="https://tieba.baidu.com/" role="button">百度贴吧</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.sina.com.cn/" role="button">新浪论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://forum.home.news.cn/" role="button">发展论坛</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.qq.com/" role="button">腾讯论坛</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://bbs.ifeng.com/" role="button">凤凰论坛</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=论坛"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">博客</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://blog.sina.com.cn/" role="button">新浪博客</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://blog.163.com/" role="button">网易博客</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://blog.tianya.cn/" role="button">天涯博客</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://blog.sohu.com/" role="button">搜狐博客</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://blog.ifeng.com/" role="button">凤凰博客</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=博客"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">音乐</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.kugou.com/" role="button">酷狗音乐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.kuwo.cn/" role="button">酷我音乐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://y.qq.com/" role="button">QQ音乐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://music.baidu.com/" role="button">百度音乐</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://music.163.com/" role="button">网易云音乐</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=音乐"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">直播</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.huya.com/" role="button">虎牙直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.douyu.com/" role="button">斗鱼直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://longzhu.com/" role="button">龙珠直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.panda.tv/" role="button">熊猫直播</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.zhanqi.tv/" role="button">战旗直播</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=直播"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">小说</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.qidian.com/" role="button">起点中文网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.zongheng.com/" role="button">纵横中文网</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.xs8.cn/" role="button">言情小说吧</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://book.qq.com/" role="button">腾讯阅读</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://yuedu.163.com/" role="button">网易云阅读</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=小说"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">邮箱</span></td>
+                    <td><a class="btn btn-default btn-xs" href="https://mail.qq.com/" role="button">QQ邮箱</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://mail.163.com/" role="button">163邮箱</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.126.com/" role="button">126邮箱</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://mail.sina.com.cn/" role="button">新浪邮箱</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="https://mail.aliyun.com/" role="button">阿里云邮箱</a>
+                    </td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=邮箱"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">银行</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.icbc.com.cn/" role="button">工商银行</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ccb.com/" role="button">建设银行</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.boc.cn/" role="button">中国银行</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.bankcomm.com/" role="button">交通银行</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.abchina.com/" role="button">农业银行</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=银行"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">生活</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.dianping.com/" role="button">大众点评</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.58.com/" role="button">58同城</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ganji.com/" role="button">赶集网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.baixing.com/" role="button">百姓网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.aibang.com/" role="button">爱帮网</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=生活"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">旅游</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ctrip.com/" role="button">携程旅行网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="https://www.qunar.com/" role="button">去哪儿网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.ly.com/" role="button">同程旅游</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.tuniu.com/" role="button">途牛旅游网</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.lvmama.com/" role="button">驴妈妈旅游</a>
+                    </td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=旅游"
+                           role="button">更多>>></a></td>
+                </tr>
+                <tr>
+                    <td scope="row"><span class="label label-default">体育</span></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.hupu.com/" role="button">虎扑体育</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://sports.sina.com.cn/" role="button">新浪体育</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://sports.sohu.com/" role="button">搜狐体育</a></td>
+                    <td><a class="btn btn-default btn-xs" href="http://www.lesports.com/" role="button">乐视体育</a>
+                    </td>
+                    <td><a class="btn btn-default btn-xs" href="http://china.nba.com/" role="button">NBA中国</a></td>
+                    <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=体育"
+                           role="button">更多>>></a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div align=right><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal"
+                                    data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                             aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">友情链接</div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td scope="row"></td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                    <td><a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link"
+                                                                                    aria-hidden="true"></span>友情链接</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">
+                <div align=right><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal"
+                                    data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus"
+                                                                             aria-hidden="true"></span>&nbsp;添加</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<div align=middle>
+    <hr>
+    <br>本站收录的网站排名不分先后，如果无意之中侵犯了您的利益，请使用email告知管理员。<br>若在本页面发现有链接失效、链接跳转错误等情况，请联系管理员，管理员邮箱：admin@example.com<br><br>Copyright
+    2017&nbsp;-
+    <script>var date = new Date();
+    document.write(date.getFullYear());</script>
+    by example.com <br>Powered by HEX9CF
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">^_^</h4>
+            </div>
+            <div class="modal-body">
+                提交网址给网址导航方法：<br>
+                发现了一个好的网站，希望网址导航可以收录？<br>
+                <br>
+                how123网址导航收录条件：<br>
+                一、您的网站不能出现以下内容：<br>
+                （一）违反宪法或法律法规规定的；<br>
+                （二）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br>
+                （三）损害国家荣誉和利益的，损害公共利益的；<br>
+                （四）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+                （五）破坏国家宗教政策，宣扬邪教和封建迷信的；<br>
+                （六）散布谣言，扰乱社会秩序，破坏社会稳定的；<br>
+                （七）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br>
+                （八）侮辱或者诽谤他人，侵害他人合法权益的；<br>
+                （九）含有法律、行政法规禁止的其他内容的。<br>
+                二、您的网站是应该是健康的，不能出现不良内容。<br>
+                三、您的网站需要经常更新内容。<br>
+                四、您的网站的内容应该是原创的。<br>
+                五、您的网站内的广告不能过多。<br>
+                六、您的网站的BR需要大于等于1。<br>
+                <br>
+                若您的网站可以满足以上条件，那就联系管理员，把您的网站的网址、简介发到的管理员邮箱，邮箱地址在下面。<br>
+                <br>
+                收录后若您的网站发生改动导致不符合收录条件，我们会取消对您的网站的收录。<br>
+                我们可以随时撤销对您的网站的收录。<br>
+                <hr>
+                若在本页面发现有链接失效、链接跳转错误等情况，请联系管理员，邮箱地址在下面。<br>
+                本站收录的网站排名不分先后，如果无意之中侵犯了贵站的利益，请使用email联系管理员。<br>
+                <hr>
+                管理员邮箱：admin@example.com<br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" language="javascript">
+    function AddFavorite(sURL, sTitle) {
+        sURL = encodeURI(sURL);
+        try {
+            window.external.addFavorite(sURL, sTitle);
+        } catch (e) {
+            try {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            } catch (e) {
+                alert("您的浏览器不支持自动收藏功能，请在本页面使用Ctrl+D进行添加收藏，或手动在浏览器里进行设置。");
+            }
+        }
+    }
+
+    function SetHome(url) {
+        if (document.all) {
+            document.body.style.behavior = 'url(#default#homepage)';
+            document.body.setHomePage(url);
+        } else {
+            alert("您的浏览器不支持自动设置本页面为首页功能，请手动在浏览器里设置该页面为首页！");
+        }
+    }
+</script>
+</html>
+
+<!-- 
+					<tr>
+					  <td scope="row"><span class="label label-default"></span></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=" role="button">更多>>></a></td>
+					</tr>
+					<tr>
+					  <td scope="row"></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+-->
